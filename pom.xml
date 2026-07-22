@@ -8,7 +8,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
-        <exec.mainClass>com.ceos.widgetfx.Main</exec.mainClass>
     </properties>
     <dependencies>
         <dependency>
@@ -29,6 +28,17 @@
             <artifactId>javafx-graphics</artifactId>
             <version>21.0.3</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-javafx</artifactId>
+            <version>12.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-fontawesome5-pack</artifactId>
+            <version>12.3.1</version>
+        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -48,10 +58,24 @@
             <version>5.0.5</version>
             <type>jar</type>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.epics</groupId>
+                    <artifactId>pbrawclient</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -68,6 +92,7 @@
                                 <includes>
                                     <include>eu.hansolo:*</include>
                                     <include>eu.hansolo.fx:*</include>
+                                    <include>org.kordamp.ikonli:*</include>
                                 </includes>
                             </artifactSet>
                             <transformers>
@@ -92,14 +117,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version>
-                <configuration>
-                    <mainClass>com.ceos.widgetfx.Standalone</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>

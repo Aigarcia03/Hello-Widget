@@ -1,43 +1,37 @@
-package com.ceos.widgetph;
+package com.ceos.widgetph.gauge;
 
 import org.csstudio.display.builder.model.Widget;
 import org.csstudio.display.builder.model.WidgetCategory;
 import org.csstudio.display.builder.model.WidgetDescriptor;
 
-/**
- *
- * @author Daniel
- */
-public class HelloWidgetDescriptor extends WidgetDescriptor {
-    
-    public HelloWidgetDescriptor() {
-        super(HelloWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Hello Widget", "", "Widget básico para demostración.");
+public class GaugeTileDescriptor extends WidgetDescriptor {
+
+    public GaugeTileDescriptor() {
+        super(GaugeTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "Una descripción corta");
     }
 
     @Override
     public Widget createWidget() {
-        return new HelloWidget();
+        return new GaugeTileWidget();
     }
-    
+
     @Override
     public String getType(){
-        return HelloWidget.WIDGET_TYPE;
+        return GaugeTileWidget.WIDGET_TYPE;
     }
-    
+
     @Override
     public String getName(){
-        return "Hello Widget";
+        return "Gauge Tile";
     }
-    
+
     @Override
     public WidgetCategory getCategory(){
-       return WidgetCategory.MONITOR; 
+       return WidgetCategory.MONITOR;
     }
-   
+
     @Override
     public String getDescription(){
         return "Widget básico para demostración.";
     }
-    
-    
 }
