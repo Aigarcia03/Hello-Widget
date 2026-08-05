@@ -87,6 +87,16 @@
             <version>5.0.5</version>
             <type>jar</type>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.epics</groupId>
+                    <artifactId>pbrawclient</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.phoebus</groupId>
+                    <artifactId>install-jars</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.phoebus</groupId>
@@ -99,6 +109,11 @@
                     <groupId>org.epics</groupId>
                     <artifactId>pbrawclient</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.phoebus</groupId>
+                    <artifactId>install-jars</artifactId>
+                </exclusion>
+
             </exclusions>
         </dependency>
 
@@ -116,10 +131,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.13.0</version>
                 <configuration>
                     <release>21</release>
                 </configuration>
+
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
