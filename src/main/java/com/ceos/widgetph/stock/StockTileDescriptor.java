@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class StockTileDescriptor extends WidgetDescriptor {
 
     public StockTileDescriptor() {
-        super(StockTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "Stock tile widget");
+        super(StockTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "/layout_add.png", "Stock tile widget");
     }
 
     @Override

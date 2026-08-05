@@ -10,7 +10,7 @@ public class AreaChartTileDescriptor extends WidgetDescriptor {
         super(AreaChartTileWidget.WIDGET_TYPE,
               WidgetCategory.PLOT,
               "Area Chart",
-              "ruta/a/tu/icono16x16.png",
+              "/chart_curve.png",
               "Gráfico de área.");
     }
 

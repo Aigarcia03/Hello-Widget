@@ -10,7 +10,7 @@ public class RadialChartTileDescriptor extends WidgetDescriptor {
         super(RadialChartTileWidget.WIDGET_TYPE,
               WidgetCategory.PLOT,
               "Radial Chart",
-              "ruta/a/tu/icono16x16.png",
+              "/chart_pie.png",
               "Gráfico radial.");
     }
 

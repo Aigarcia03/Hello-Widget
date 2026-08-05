@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class HighLowTileDescriptor extends WidgetDescriptor {
 
     public HighLowTileDescriptor() {
-        super(HighLowTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "High-Low tile widget");
+        super(HighLowTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "/contrast_high.png", "High-Low tile widget");
     }
 
     @Override

@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class GaugeTileDescriptor extends WidgetDescriptor {
 
     public GaugeTileDescriptor() {
-        super(GaugeTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "Una descripción corta");
+        super(GaugeTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "/speedometer.png", "Una descripción corta");
     }
 
     @Override

@@ -28,9 +28,12 @@ public abstract class BaseTileWidget extends PVWidget {
     private WidgetProperty<Double> minValue;
     private WidgetProperty<Double> maxValue;
     private WidgetProperty<Boolean> animated;
+    private WidgetProperty<WidgetColor> alarmColor;
 
     public BaseTileWidget(String type) {
         super(type);
+        propWidth().setValue(200);
+        propHeight().setValue(200);
     }
 
     @Override
@@ -90,6 +93,9 @@ public abstract class BaseTileWidget extends PVWidget {
                 WidgetPropertyCategory.BEHAVIOR, "animated", "Animated");
         animated = animDesc.createProperty(this, true);
         properties.add(animated);
+
+        alarmColor = createColorProp("alarmColor", "Alarm Color", new WidgetColor(255, 0, 0, 0));
+        properties.add(alarmColor);
     }
 
     private WidgetProperty<WidgetColor> createColorProp(String name, String description, WidgetColor defaultValue) {
@@ -112,4 +118,5 @@ public abstract class BaseTileWidget extends PVWidget {
     public WidgetProperty<Double> propMinValue() { return minValue; }
     public WidgetProperty<Double> propMaxValue() { return maxValue; }
     public WidgetProperty<Boolean> propAnimated() { return animated; }
+    public WidgetProperty<WidgetColor> propAlarmColor() { return alarmColor; }
 }

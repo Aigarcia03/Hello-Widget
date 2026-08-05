@@ -15,11 +15,10 @@ public class GaugeTileWidget extends BaseTileWidget {
     private WidgetProperty<WidgetColor> needleColor;
     private WidgetProperty<WidgetColor> barColor;
     private WidgetProperty<WidgetColor> barBackgroundColor;
-    private WidgetProperty<WidgetColor> tickMarkColor;
-    private WidgetProperty<WidgetColor> tickLabelColor;
 
     private WidgetProperty<Double> threshold;
     private WidgetProperty<Boolean> thresholdVisible;
+    private WidgetProperty<WidgetColor> thresholdColor;
 
     public GaugeTileWidget() {
         super(WIDGET_TYPE);
@@ -38,12 +37,6 @@ public class GaugeTileWidget extends BaseTileWidget {
         barBackgroundColor = createColorProp("barBackgroundColor", "Bar Background", new WidgetColor(40, 40, 40));
         properties.add(barBackgroundColor);
 
-        tickMarkColor = createColorProp("tickMarkColor", "Tick Mark Color", new WidgetColor(160, 160, 160));
-        properties.add(tickMarkColor);
-
-        tickLabelColor = createColorProp("tickLabelColor", "Tick Label Color", new WidgetColor(160, 160, 160));
-        properties.add(tickLabelColor);
-
         WidgetPropertyDescriptor<Double> threshDesc = CommonWidgetProperties.newDoublePropertyDescriptor(
                 WidgetPropertyCategory.BEHAVIOR, "threshold", "Threshold");
         threshold = threshDesc.createProperty(this, 75.0);
@@ -53,6 +46,9 @@ public class GaugeTileWidget extends BaseTileWidget {
                 WidgetPropertyCategory.BEHAVIOR, "thresholdVisible", "Threshold Visible");
         thresholdVisible = threshVisDesc.createProperty(this, true);
         properties.add(thresholdVisible);
+
+        thresholdColor = createColorProp("thresholdColor", "Threshold Color", new WidgetColor(255, 0, 0));
+        properties.add(thresholdColor);
     }
 
     private WidgetProperty<WidgetColor> createColorProp(String name, String description, WidgetColor defaultValue) {
@@ -64,8 +60,7 @@ public class GaugeTileWidget extends BaseTileWidget {
     public WidgetProperty<WidgetColor> propNeedleColor() { return needleColor; }
     public WidgetProperty<WidgetColor> propBarColor() { return barColor; }
     public WidgetProperty<WidgetColor> propBarBackgroundColor() { return barBackgroundColor; }
-    public WidgetProperty<WidgetColor> propTickMarkColor() { return tickMarkColor; }
-    public WidgetProperty<WidgetColor> propTickLabelColor() { return tickLabelColor; }
     public WidgetProperty<Double> propThreshold() { return threshold; }
     public WidgetProperty<Boolean> propThresholdVisible() { return thresholdVisible; }
+    public WidgetProperty<WidgetColor> propThresholdColor() { return thresholdColor; }
 }

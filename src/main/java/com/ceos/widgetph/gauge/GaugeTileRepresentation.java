@@ -20,10 +20,9 @@ public class GaugeTileRepresentation extends BaseTileRepresentation<GenericTile,
         model.propNeedleColor().addUntypedPropertyListener(listener);
         model.propBarColor().addUntypedPropertyListener(listener);
         model.propBarBackgroundColor().addUntypedPropertyListener(listener);
-        model.propTickMarkColor().addUntypedPropertyListener(listener);
-        model.propTickLabelColor().addUntypedPropertyListener(listener);
         model.propThreshold().addUntypedPropertyListener(listener);
         model.propThresholdVisible().addUntypedPropertyListener(listener);
+        model.propThresholdColor().addUntypedPropertyListener(listener);
     }
 
     @Override
@@ -39,9 +38,8 @@ public class GaugeTileRepresentation extends BaseTileRepresentation<GenericTile,
         jfx_node.setNeedleColor(JFXUtil.convert(model_widget.propNeedleColor().getValue()));
         jfx_node.setBarColor(JFXUtil.convert(model_widget.propBarColor().getValue()));
         jfx_node.setBarBackgroundColor(JFXUtil.convert(model_widget.propBarBackgroundColor().getValue()));
-        jfx_node.setTickMarkColor(JFXUtil.convert(model_widget.propTickMarkColor().getValue()));
-        jfx_node.setTickLabelColor(JFXUtil.convert(model_widget.propTickLabelColor().getValue()));
         jfx_node.setThreshold(model_widget.propThreshold().getValue());
         jfx_node.setThresholdVisible(model_widget.propThresholdVisible().getValue());
+        jfx_node.setThresholdColor(JFXUtil.convert(model_widget.propThresholdColor().getValue()));
     }
 }

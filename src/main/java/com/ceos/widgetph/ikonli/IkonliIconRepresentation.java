@@ -16,7 +16,7 @@ public class IkonliIconRepresentation extends BaseTileRepresentation<IkonliIconN
     protected void registerListeners() {
         super.registerListeners();
         final IkonliIconWidget model = model_widget;
-        model.propIconName().addUntypedPropertyListener(listener);
+        model.propIconOption().addUntypedPropertyListener(listener);
         model.propIconSize().addUntypedPropertyListener(listener);
         model.propIconColor().addUntypedPropertyListener(listener);
     }
@@ -31,7 +31,7 @@ public class IkonliIconRepresentation extends BaseTileRepresentation<IkonliIconN
     }
 
     private void applyIconProperties() {
-        jfx_node.setIconLiteral(model_widget.propIconName().getValue());
+        jfx_node.setIconLiteral(model_widget.propIconOption().getValue().getIconLiteral());
         jfx_node.setIconSize(model_widget.propIconSize().getValue());
         jfx_node.setIconColor(JFXUtil.convert(model_widget.propIconColor().getValue()));
     }

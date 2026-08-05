@@ -1,6 +1,10 @@
 package com.ceos.widgetph.timercontrol;
 
 import eu.hansolo.tilesfx.Tile.SkinType;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
 import org.csstudio.display.builder.representation.javafx.JFXUtil;
 import com.ceos.widgetfx.GenericTile;
 import com.ceos.widgetph.base.BaseTileRepresentation;
@@ -10,7 +14,18 @@ public class TimerControlTileRepresentation extends BaseTileRepresentation<Gener
 
     @Override
     protected GenericTile createJFXNode() throws Exception {
-        return new GenericTile(SkinType.TIMER_CONTROL);
+        GenericTile node = new GenericTile(SkinType.TIMER_CONTROL);
+        node.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                node.setRunning(true);
+                Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+                    node.setTime(java.time.ZonedDateTime.now());
+                }));
+                timeline.setCycleCount(Animation.INDEFINITE);
+                timeline.play();
+            }
+        });
+        return node;
     }
 
     @Override

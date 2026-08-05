@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class DonutChartTileDescriptor extends WidgetDescriptor {
 
     public DonutChartTileDescriptor() {
-        super(DonutChartTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "Donut chart tile widget");
+        super(DonutChartTileWidget.WIDGET_TYPE, WidgetCategory.PLOT, "Custom", "/chart_pie.png", "Donut chart tile widget");
     }
 
     @Override
@@ -27,7 +27,7 @@ public class DonutChartTileDescriptor extends WidgetDescriptor {
 
     @Override
     public WidgetCategory getCategory(){
-       return WidgetCategory.MONITOR;
+       return WidgetCategory.PLOT;
     }
 
     @Override

@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class PlusMinusTileDescriptor extends WidgetDescriptor {
 
     public PlusMinusTileDescriptor() {
-        super(PlusMinusTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "Plus-Minus tile widget");
+        super(PlusMinusTileWidget.WIDGET_TYPE, WidgetCategory.CONTROL, "Custom", "/contrast_high.png", "Plus-Minus tile widget");
     }
 
     @Override
@@ -27,7 +27,7 @@ public class PlusMinusTileDescriptor extends WidgetDescriptor {
 
     @Override
     public WidgetCategory getCategory(){
-       return WidgetCategory.MONITOR;
+       return WidgetCategory.CONTROL;
     }
 
     @Override

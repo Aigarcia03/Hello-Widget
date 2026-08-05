@@ -1,5 +1,6 @@
 package com.ceos.widgetph.circularprogress;
 
+import org.csstudio.display.builder.representation.javafx.JFXUtil;
 import org.epics.vtype.VNumber;
 import org.epics.vtype.VType;
 import eu.hansolo.tilesfx.Tile.SkinType;
@@ -15,10 +16,17 @@ public class CircularProgressTileRepresentation extends BaseTileRepresentation<G
     }
 
     @Override
+    protected void registerListeners() {
+        super.registerListeners();
+        model_widget.propBarColor().addUntypedPropertyListener(listener);
+    }
+
+    @Override
     public void updateChanges() {
         super.updateChanges();
         if (dirty_look.checkAndClear()) {
             TileHelper.applyProperties(jfx_node, model_widget);
+            jfx_node.setBarColor(JFXUtil.convert(model_widget.propBarColor().getValue()));
         }
 
         VType vtype = model_widget.runtimePropValue().getValue();

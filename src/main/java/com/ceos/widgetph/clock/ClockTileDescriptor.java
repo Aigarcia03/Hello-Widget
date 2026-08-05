@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class ClockTileDescriptor extends WidgetDescriptor {
 
     public ClockTileDescriptor() {
-        super(ClockTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "Clock widget");
+        super(ClockTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "/watch.png", "Clock widget");
     }
 
     @Override

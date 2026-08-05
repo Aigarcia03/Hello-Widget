@@ -10,7 +10,7 @@ public class CircularProgressTileDescriptor extends WidgetDescriptor {
         super(CircularProgressTileWidget.WIDGET_TYPE,
               WidgetCategory.MONITOR,
               "Circular Progress",
-              "ruta/a/tu/icono16x16.png",
+              "/ui-progress-bar.png",
               "Progreso circular.");
     }
 

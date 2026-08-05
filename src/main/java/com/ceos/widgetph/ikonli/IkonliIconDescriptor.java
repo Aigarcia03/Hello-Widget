@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class IkonliIconDescriptor extends WidgetDescriptor {
 
     public IkonliIconDescriptor() {
-        super(IkonliIconWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "Ikonli icon widget");
+        super(IkonliIconWidget.WIDGET_TYPE, WidgetCategory.MISC, "Custom", "/add.png", "Ikonli icon widget");
     }
 
     @Override
@@ -27,7 +27,7 @@ public class IkonliIconDescriptor extends WidgetDescriptor {
 
     @Override
     public WidgetCategory getCategory(){
-       return WidgetCategory.MONITOR;
+       return WidgetCategory.MISC;
     }
 
     @Override

@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class SparklineTileDescriptor extends WidgetDescriptor {
 
     public SparklineTileDescriptor() {
-        super(SparklineTileWidget.WIDGET_TYPE, WidgetCategory.PLOT, "Sparkline", "ruta/a/tu/icono16x16.png", "Widget de gráfico de línea temporal.");
+        super(SparklineTileWidget.WIDGET_TYPE, WidgetCategory.PLOT, "Sparkline", "/chart-down.png", "Widget de gráfico de línea temporal.");
     }
 
     @Override

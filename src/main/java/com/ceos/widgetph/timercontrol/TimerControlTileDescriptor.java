@@ -7,7 +7,7 @@ import org.csstudio.display.builder.model.WidgetDescriptor;
 public class TimerControlTileDescriptor extends WidgetDescriptor {
 
     public TimerControlTileDescriptor() {
-        super(TimerControlTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "ruta/a/tu/ícono16x16.png", "Timer Control tile widget");
+        super(TimerControlTileWidget.WIDGET_TYPE, WidgetCategory.MONITOR, "Custom", "/watch.png", "Timer Control tile widget");
     }
 
     @Override

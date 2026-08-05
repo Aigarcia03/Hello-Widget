@@ -10,7 +10,7 @@ public class LineChartTileDescriptor extends WidgetDescriptor {
         super(LineChartTileWidget.WIDGET_TYPE,
               WidgetCategory.PLOT,
               "Line Chart",
-              "ruta/a/tu/icono16x16.png",
+              "/chart_line.png",
               "Gráfico de línea.");
     }
 

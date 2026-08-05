@@ -1,6 +1,7 @@
 package com.ceos.widgetfx;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import org.kordamp.ikonli.Ikon;
@@ -10,12 +11,15 @@ import org.kordamp.ikonli.javafx.FontIcon;
 public class IkonliIconNode extends Pane implements TileNode {
 
     private FontIcon icon;
+    private StackPane center;
 
     public IkonliIconNode() {
         icon = new FontIcon(FontAwesomeSolid.HOME);
         icon.setIconSize(48);
         icon.setIconColor(Color.BLACK);
-        this.getChildren().add(icon);
+        center = new StackPane(icon);
+        center.setMouseTransparent(true);
+        this.getChildren().add(center);
     }
 
     public void setIcon(Ikon ikon) {
@@ -74,8 +78,9 @@ public class IkonliIconNode extends Pane implements TileNode {
         if (w > 0 && h > 0) {
             double size = Math.min(w, h);
             icon.setIconSize((int) (size * 0.6));
-            icon.setX((w - icon.getLayoutBounds().getWidth()) / 2);
-            icon.setY((h - icon.getLayoutBounds().getHeight()) / 2);
+            center.setPrefSize(w, h);
+            center.resize(w, h);
+            center.relocate(0, 0);
         }
     }
 }
